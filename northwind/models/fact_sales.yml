@@ -1,0 +1,33 @@
+version: 2
+models:
+  - name: fact_sales
+    description: order level fact table. Transaction one row per order 
+    columns:
+      - name: OrderId
+        description: Source key for the order.
+        tests:
+          - not_null
+      - name: customerkey
+        description: Dimension foreign key for dim_customer
+      - name: employeekey
+        description: Dimension foreign key for dim_employee
+      - name: orderdatekey
+        description: dimension foreign key for dim_date
+      - name: productkey
+        description: Dimension foreign key for dim_product
+      - name: quantity
+        description: additive fact for total quantity of product sold on order
+        tests:
+          - not_null 
+      - name: extendedpriceamount
+        description: additive fact for total amount of product before discounts on order quantity * product price
+        tests:  
+          - not_null
+      - name: discountamount
+        description: additive fact for total amount of discount amount extendedpriceamount * discount
+        tests:
+          - not_null
+      - name: soldamount
+        description: additive fact for total amount sold extendedpriceamount - discountamount
+        tests:
+          - not_null
