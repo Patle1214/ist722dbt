@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_fm_products
+    description: "Staging model for FudgeMart products with cleaned retail price"
+    columns:
+      - name: product_id
+        description: "Raw FudgeMart product ID"
+        tests:
+          - not_null
+
+      - name: product_retail_price
+        description: "Retail price cleaned of non-numeric characters and cast to number"
+        tests:
+          - not_null

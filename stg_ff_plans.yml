@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: stg_ff_account_titles
+    description: "Staging model for FudgeFlix account title events with timestamp normalization"
+
+    columns:
+      - name: account_title_id
+        tests:
+          - not_null
+          - unique
+
+      - name: account_id
+        tests:
+          - not_null
+
+      - name: title_id
+        tests:
+          - not_null
+
+      - name: order_date
+        tests:
+          - not_null
+
+      - name: shipped_date
+
+      - name: returned_date

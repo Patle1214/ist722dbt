@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_ff_accounts
+    description: "Staging model for FudgeFlix accounts with plan IDs"
+    columns:
+      - name: account_id
+        description: "Raw FudgeFlix account ID"
+        tests:
+          - not_null
+
+      - name: account_plan_id
+        description: "Plan ID associated with the account"
+        tests:
+          - not_null

@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_ff_plans
+    description: "Staging model for FudgeFlix subscription plans"
+    columns:
+      - name: plan_id
+        description: "Raw FudgeFlix plan ID"
+        tests:
+          - not_null
+
+      - name: plan_price
+        description: "Price associated with the subscription plan"
+        tests:
+          - not_null

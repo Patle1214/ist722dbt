@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'project'
+name: 'fudgemart'
 version: '1.0.0'
 config-version: 2
 
@@ -36,12 +36,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  my_new_project:
-    # Applies to all files under models/example/
-    example:
-      +materialized: table
-
-  project:
     +materialized: table
     +database: analytics
-    +schema: project
+    +schema: fudgemart  
+

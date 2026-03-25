@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_fm_order_details
+    description: "Staging model for FudgeMart order line items"
+    columns:
+      - name: order_id
+        description: "Raw FudgeMart order ID"
+        tests:
+          - not_null
+
+      - name: product_id
+        description: "Raw FudgeMart product ID"
+        tests:
+          - not_null
+
+      - name: order_qty
+        description: "Quantity of the product ordered"
+        tests:
+          - not_null
