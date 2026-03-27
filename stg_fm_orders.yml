@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_ff_titles
+    description: "Staging model for FudgeFlix titles with instant-availability flag"
+    columns:
+      - name: title_id
+        description: "Raw FudgeFlix title ID"
+        tests:
+          - not_null
+      - name: title_name
+        description: "Name of the title"
+
+      - name: title_instant_available
+        description: "Boolean flag indicating whether the title is available for instant streaming"

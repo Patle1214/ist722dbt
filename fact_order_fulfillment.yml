@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: dim_orders
+    description: "Orders dimension combining Fudgemart and Fudgeflix orders"
+    columns:
+      - name: order_id
+        description: "Original order identifier from source systems"
+        tests:
+          - not_null
+      - name: orderkey
+        description: "Surrogate key for the order dimension"
+        tests:
+          - not_null
+          - unique
+      - name: customerkey
+        description: "Customer identifier (at_account_id for Fudgeflix, customer_id for Fudgemart)"
+        tests:
+          - not_null
+      - name: division
+        description: "Source system identifier (Fudgemart or Fudgeflix)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Fudgemart', 'Fudgeflix']
+      - name: orderdatekey
+        description: "Date key (YYYYMMDD) representing when the order was placed"
+        tests:
+          - not_null
+      - name: shippeddatekey
+        description: "Date key (YYYYMMDD) representing when the order was shipped"
+      - name: returneddatekey
+        description: "Date key (YYYYMMDD) representing when the order was returned (Fudgeflix only)"
+      - name: ship_via
+        description: "Shipping method used (Fudgemart only)"

@@ -1,0 +1,45 @@
+{
+    "path_count": 157,
+    "parsed_path_count": 3,
+    "static_analysis_path_count": 2,
+    "static_analysis_parsed_path_count": 2,
+    "is_partial_parse_enabled": true,
+    "is_static_analysis_enabled": true,
+    "read_files_elapsed": 0.014148204994853586,
+    "load_macros_elapsed": 0.0004926149849779904,
+    "parse_project_elapsed": 0.635748746979516,
+    "patch_sources_elapsed": 8.586997864767909e-06,
+    "process_manifest_elapsed": 0.0019410869863349944,
+    "load_all_elapsed": 0.7116586990014184,
+    "projects": [
+        {
+            "project_name": "my_new_project",
+            "elapsed": 0.6356620299920905,
+            "parsers": [
+                {
+                    "parser": "model",
+                    "elapsed": 0.29464508799719624,
+                    "parsed_path_count": 2
+                },
+                {
+                    "parser": "test",
+                    "elapsed": 0.3409993069944903,
+                    "parsed_path_count": 1
+                }
+            ],
+            "parsed_path_count": 3
+        },
+        {
+            "project_name": "dbt_snowflake",
+            "elapsed": 0,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt",
+            "elapsed": 0,
+            "parsers": [],
+            "parsed_path_count": 0
+        }
+    ]
+}

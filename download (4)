@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: stg_fulfillment_events
+    description: "Unified staging model combining FudgeMart and FudgeFlix fulfillment events"
+    columns:
+      - name: source_system
+        description: "Originating system: Fudgemart or FudgeFlix"
+        tests:
+          - not_null
+
+      - name: source_order_id
+        description: "Order identifier from the source system"
+        tests:
+          - not_null
+
+      - name: source_customer_id
+        description: "Customer identifier from the source system"
+        tests:
+          - not_null
+
+      - name: source_item_id
+        description: "Item identifier from the source system"
+        tests:
+          - not_null
+
+      - name: order_date
+        description: "Date the order was placed"
+        tests:
+          - not_null
+
+      - name: shipped_date
+        description: "Date the order was shipped"
+
+      - name: returned_date
+        description: "Date the order was returned (FudgeFlix only)"
+
+      - name: quantity
+        description: "Quantity fulfilled"
+        tests:
+          - not_null
+
+      - name: unit_price
+        description: "Unit price at time of fulfillment"
+        tests:
+          - not_null
+
+      - name: fulfillment_channel
+        description: "Shipping, Rental, Streaming, or Unknown"
+        tests:
+          - not_null

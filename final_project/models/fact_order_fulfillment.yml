@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: fact_order_fulfillment
+    description: "One row per product from FudgeMart and FudgeFlix"
+    columns:
+      - name: order_id
+        description: "Natural key for the fulfillment event"
+        tests:
+          - not_null
+
+      - name: customerkey
+        description: "Business key for the customer (will map to dim_customer)"
+        tests:
+          - not_null
+
+      - name: orderkey
+        description: "Business key for the order (will map to dim_order)"
+        tests:
+          - not_null
+
+      - name: division
+        description: "FudgeMart or FudgeFlix"
+        tests:
+          - not_null
+
+      - name: orderdatekey
+        description: "Raw order date"
+        tests:
+          - not_null
+
+      - name: shippeddatekey
+        description: "Raw shipped date"
+
+      - name: returneddatekey
+        description: "Raw returned date"
+
+      - name: order_to_shipped
+        description: "Difference from ordered to shipped date"
+
+     
+
+
